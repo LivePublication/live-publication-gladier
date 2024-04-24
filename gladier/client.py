@@ -237,9 +237,17 @@ class GladierBaseClient(object):
                     '"gladier_tools" must be a defined list of Gladier Tools. '
                     'Ex: ["gladier.tools.hello_world.HelloWorld"]'
                 )
+        
+        self._pre_tools = []
+        for gt in gtools:
+            if not isinstance(gt, str):
+                for count, func in enumerate(gt.compute_functions):
+                    print(count, func.__name__)
+                    gtools.insert(gtools.index(gt) + count + 1, f"gladier_tools.globus.Transfer:_provenance_{func.__name__}")
         self._tools = [
             self.get_gladier_defaults_cls(gt, self.alias_class) for gt in gtools
         ]
+
         return self._tools
 
     @property
