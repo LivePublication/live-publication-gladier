@@ -238,15 +238,19 @@ class GladierBaseClient(object):
                     'Ex: ["gladier.tools.hello_world.HelloWorld"]'
                 )
         
-        self._pre_tools = []
         for gt in gtools:
-            if not isinstance(gt, str):
                 for count, func in enumerate(gt.compute_functions):
-                    print(count, func.__name__)
+                    # print(count, func.__name__)
+                    """ 
+                    TODO: How do multiple compute functions executed as a 
+                    single tool/step get handled? Dist Step Crate per function?
+                    """
                     gtools.insert(gtools.index(gt) + count + 1, f"gladier_tools.globus.Transfer:_provenance_{func.__name__}")
+
         self._tools = [
             self.get_gladier_defaults_cls(gt, self.alias_class) for gt in gtools
         ]
+
 
         return self._tools
 
@@ -480,11 +484,12 @@ class GladierBaseClient(object):
         :param flow_input: Flow input intended to be passed to run_flow()
         :raises: gladier.exc.ConfigException
         """
-        for req_input in tool.get_required_input():
-            if req_input not in flow_input["input"]:
-                raise gladier.exc.ConfigException(
-                    f'{tool} requires flow input value: "{req_input}"'
-                )
+        pass
+        # for req_input in tool.get_required_input():
+        #     if req_input not in flow_input["input"]:
+        #         raise gladier.exc.ConfigException(
+        #             f'{tool} requires flow input value: "{req_input}"'
+        #         )
 
     def get_status(self, action_id: str):
         """
