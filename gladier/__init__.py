@@ -4,6 +4,8 @@ import logging
 import typing as t
 
 from gladier.base import GladierBaseTool
+from gladier.provenance_base import ProvenanceBaseTool
+from gladier.provenance_client import ProvenanceBaseClient
 from gladier.client import GladierBaseClient, GladierClient
 from gladier.decorators import generate_flow_definition
 from gladier.managers import CallbackLoginManager, FlowsManager
@@ -20,6 +22,8 @@ from .state_models import (
 _nameables = (
     x.__name__
     for x in (
+        ProvenanceBaseTool,
+        ProvenanceBaseClient,
         GladierBaseTool,
         GladierBaseClient,
         GladierClient,
