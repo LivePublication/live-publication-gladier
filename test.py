@@ -1,5 +1,6 @@
 from gladier import generate_flow_definition, ProvenanceBaseTool, ProvenanceBaseClient
 import json
+from pprint import pprint
 
 def makedirs(**data):
     """Make a directory on the filesystem"""
@@ -11,8 +12,11 @@ def makedirs(**data):
 def ls(**data):
     """List files on the filesystem"""
     import os
-
-    return os.listdir(data["path"])
+    current_directory = os.getcwd()
+    
+    # List the contents of the directory
+    files = os.listdir(current_directory)
+    return files
 
 @generate_flow_definition()
 class MakeDirs(ProvenanceBaseTool):
@@ -40,9 +44,14 @@ class ListDirs(ProvenanceBaseTool):
 )
 class client(ProvenanceBaseClient):
     gladier_tools = [
-        MakeDirs,
+        # MakeDirs,
         ListDirs,
         ]
+    
+class ProvenanceFlow(ProvenanceBaseClient):
+    gladier_tools = [
+        ListDirs
+    ]
 
 
 # test_tool = MakeDirs()
@@ -50,21 +59,29 @@ class client(ProvenanceBaseClient):
 # flow_test = test_tool.get_flow_definition()
 
 test_client = client()
-flow = test_client.get_flow_definition()
+flow_definition = test_client.get_flow_definition()
+
+# Sync flow with Globus and get the flow_id for prov folder
+test_client.sync_flow()
+flow_id = test_client.flows_manager.get_flow_id()
+
+# flow = test_client.get_flow_definition()
 # print(json.dumps(flow, indent=4))
 # print(json.dumps(test_client.flow_definition, indent=4))
 
-test_client.run_flow(flow_input={
+flow = test_client.run_flow(flow_input={
     "input": {
         'compute_endpoint': '58fb6f2d-ff78-4f39-9669-38c12d01f566', 
         'prov_compute_GCS_id': '8ee44381-114a-45de-b8f8-d105a90c200d',
         'orchestration_server_endpoint_id': '4a420ad5-4113-4d7d-aba2-883f8208e897',
-        
-        '_provenance_makedirs_transfer_destination_path': 'crates/makedirs/',
-        '_provenance_ls_transfer_destination_path': 'crates/ls/'
+        '_provenance_crate_destination_directory': flow_id
         }
     },
     label='test')
 
+# # # Track the progress
+action_id = flow["action_id"]
+test_client.progress(action_id)
+pprint(test_client.get_status(action_id))
 
 
