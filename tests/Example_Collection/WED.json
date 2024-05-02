@@ -1,0 +1,2353 @@
+[
+  {
+    "time": "2024-05-02T23:43:37.107000+00:00",
+    "code": "FlowSucceeded",
+    "description": "The Flow Instance completed successfully",
+    "details": {
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferFromCompute",
+          "action_id": "yXYVm68fZ2Eg",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 86091,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:43:35+00:00",
+            "deadline": "2024-05-03T23:43:25+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Data_Staging",
+            "destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 7998,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:35+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 86091,
+                  "duration": 3.78,
+                  "mbps": 0.18
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:35+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:32+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id yXYVm68fZ2Eg",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:43:25+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "c200ab06-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:43:20.211833+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:43:20.211803+00:00"
+        },
+        "Ls": {
+          "state_name": "Ls",
+          "action_id": "tg_b1b97c76-02af-466a-b2f9-c951bbfbeb89",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              [
+                "input",
+                "output",
+                "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+              ]
+            ],
+            "results": [
+              {
+                "output": [
+                  "input",
+                  "output",
+                  "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+                ],
+                "task_id": "b2bb0cea-ce63-4a83-ba58-74df9b8bce71"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:03.847899+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:41:51.667575+00:00"
+        },
+        "Transfer_provenance_ls": {
+          "state_name": "Transfer_provenance_ls",
+          "action_id": "lVM8twxW0SEp",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:42:22+00:00",
+            "deadline": "2024-05-03T23:42:12+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 115,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.02,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:19+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id lVM8twxW0SEp",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:42:12+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "965e7f50-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:06.827256+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:06.827227+00:00"
+        },
+        "Getscript": {
+          "state_name": "Getscript",
+          "action_id": "tg_6d96f62f-01ae-4d92-bcfc-6eb32a3648d1",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              null
+            ],
+            "results": [
+              {
+                "output": null,
+                "task_id": "7a171870-b038-4174-84e1-29cdcc42f72c"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:46.448732+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:42:43.612068+00:00"
+        },
+        "Transfer_provenance_GetScript": {
+          "state_name": "Transfer_provenance_GetScript",
+          "action_id": "13V3D85zjczsN",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:43:12+00:00",
+            "deadline": "2024-05-03T23:43:02+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 104,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:12+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.07,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:12+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:09+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id 13V3D85zjczsN",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:43:02+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "b4620986-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:57.646283+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:57.646258+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:43:37.035000+00:00",
+    "code": "ActionCompleted",
+    "description": "State TransferFromCompute of type Action completed",
+    "details": {
+      "state_name": "TransferFromCompute",
+      "state_type": "Action",
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferFromCompute",
+          "action_id": "yXYVm68fZ2Eg",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 86091,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:43:35+00:00",
+            "deadline": "2024-05-03T23:43:25+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Data_Staging",
+            "destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 7998,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:35+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 86091,
+                  "duration": 3.78,
+                  "mbps": 0.18
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:35+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:32+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id yXYVm68fZ2Eg",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:43:25+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "c200ab06-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:43:20.211833+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:43:20.211803+00:00"
+        },
+        "Ls": {
+          "state_name": "Ls",
+          "action_id": "tg_b1b97c76-02af-466a-b2f9-c951bbfbeb89",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              [
+                "input",
+                "output",
+                "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+              ]
+            ],
+            "results": [
+              {
+                "output": [
+                  "input",
+                  "output",
+                  "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+                ],
+                "task_id": "b2bb0cea-ce63-4a83-ba58-74df9b8bce71"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:03.847899+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:41:51.667575+00:00"
+        },
+        "Transfer_provenance_ls": {
+          "state_name": "Transfer_provenance_ls",
+          "action_id": "lVM8twxW0SEp",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:42:22+00:00",
+            "deadline": "2024-05-03T23:42:12+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 115,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.02,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:19+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id lVM8twxW0SEp",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:42:12+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "965e7f50-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:06.827256+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:06.827227+00:00"
+        },
+        "Getscript": {
+          "state_name": "Getscript",
+          "action_id": "tg_6d96f62f-01ae-4d92-bcfc-6eb32a3648d1",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              null
+            ],
+            "results": [
+              {
+                "output": null,
+                "task_id": "7a171870-b038-4174-84e1-29cdcc42f72c"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:46.448732+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:42:43.612068+00:00"
+        },
+        "Transfer_provenance_GetScript": {
+          "state_name": "Transfer_provenance_GetScript",
+          "action_id": "13V3D85zjczsN",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:43:12+00:00",
+            "deadline": "2024-05-03T23:43:02+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 104,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:12+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.07,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:12+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:09+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id 13V3D85zjczsN",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:43:02+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "b4620986-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:57.646283+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:57.646258+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:43:17.542000+00:00",
+    "code": "ActionStarted",
+    "description": "State TransferFromCompute of type Action started",
+    "details": {
+      "state_name": "TransferFromCompute",
+      "state_type": "Action",
+      "input": {
+        "transfer_items": [
+          {
+            "destination_path": "/input/test.txt",
+            "source_path": "/output/test.txt",
+            "recursive": false
+          }
+        ],
+        "destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+        "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d"
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:43:17.542000+00:00",
+    "code": "ActionCompleted",
+    "description": "State Transfer_provenance_GetScript of type Action completed",
+    "details": {
+      "state_name": "Transfer_provenance_GetScript",
+      "state_type": "Action",
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferToCompute",
+          "action_id": "LI1CcDCLpCxT",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 0,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:41:37+00:00",
+            "deadline": "2024-05-03T23:41:29+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "destination_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 0,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:37+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:35+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id LI1CcDCLpCxT",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:41:29+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "source_endpoint_display_name": "LivePublication_Data_Staging",
+            "source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "7cbe0476-08dd-11ef-8aa4-993129235be9",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:41:06.944778+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:41:06.944747+00:00"
+        },
+        "Ls": {
+          "state_name": "Ls",
+          "action_id": "tg_b1b97c76-02af-466a-b2f9-c951bbfbeb89",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              [
+                "input",
+                "output",
+                "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+              ]
+            ],
+            "results": [
+              {
+                "output": [
+                  "input",
+                  "output",
+                  "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+                ],
+                "task_id": "b2bb0cea-ce63-4a83-ba58-74df9b8bce71"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:03.847899+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:41:51.667575+00:00"
+        },
+        "Transfer_provenance_ls": {
+          "state_name": "Transfer_provenance_ls",
+          "action_id": "lVM8twxW0SEp",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:42:22+00:00",
+            "deadline": "2024-05-03T23:42:12+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 115,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.02,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:19+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id lVM8twxW0SEp",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:42:12+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "965e7f50-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:06.827256+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:06.827227+00:00"
+        },
+        "Getscript": {
+          "state_name": "Getscript",
+          "action_id": "tg_6d96f62f-01ae-4d92-bcfc-6eb32a3648d1",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              null
+            ],
+            "results": [
+              {
+                "output": null,
+                "task_id": "7a171870-b038-4174-84e1-29cdcc42f72c"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:46.448732+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:42:43.612068+00:00"
+        },
+        "Transfer_provenance_GetScript": {
+          "state_name": "Transfer_provenance_GetScript",
+          "action_id": "13V3D85zjczsN",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:43:12+00:00",
+            "deadline": "2024-05-03T23:43:02+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 104,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:12+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.07,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:12+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:43:09+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id 13V3D85zjczsN",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:43:02+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "b4620986-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:57.646283+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:57.646258+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:42:46.805000+00:00",
+    "code": "ActionStarted",
+    "description": "State Transfer_provenance_GetScript of type Action started",
+    "details": {
+      "state_name": "Transfer_provenance_GetScript",
+      "state_type": "Action",
+      "input": {
+        "transfer_items": [
+          {
+            "recursive": true,
+            "source_path.=": "`$.Getscript.details.results[0].task_id` + '.crate'",
+            "destination_path.=": "`$.input._provenance_crate_destination_directory` + '/' + `$.Getscript.details.results[0].task_id`"
+          }
+        ],
+        "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+        "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d"
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:42:46.805000+00:00",
+    "code": "ActionCompleted",
+    "description": "State Getscript of type Action completed",
+    "details": {
+      "state_name": "Getscript",
+      "state_type": "Action",
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferToCompute",
+          "action_id": "LI1CcDCLpCxT",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 0,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:41:37+00:00",
+            "deadline": "2024-05-03T23:41:29+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "destination_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 0,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:37+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:35+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id LI1CcDCLpCxT",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:41:29+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "source_endpoint_display_name": "LivePublication_Data_Staging",
+            "source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "7cbe0476-08dd-11ef-8aa4-993129235be9",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:41:06.944778+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:41:06.944747+00:00"
+        },
+        "Ls": {
+          "state_name": "Ls",
+          "action_id": "tg_b1b97c76-02af-466a-b2f9-c951bbfbeb89",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              [
+                "input",
+                "output",
+                "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+              ]
+            ],
+            "results": [
+              {
+                "output": [
+                  "input",
+                  "output",
+                  "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+                ],
+                "task_id": "b2bb0cea-ce63-4a83-ba58-74df9b8bce71"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:03.847899+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:41:51.667575+00:00"
+        },
+        "Transfer_provenance_ls": {
+          "state_name": "Transfer_provenance_ls",
+          "action_id": "lVM8twxW0SEp",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:42:22+00:00",
+            "deadline": "2024-05-03T23:42:12+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 115,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.02,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:19+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id lVM8twxW0SEp",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:42:12+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "965e7f50-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:06.827256+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:06.827227+00:00"
+        },
+        "Getscript": {
+          "state_name": "Getscript",
+          "action_id": "tg_6d96f62f-01ae-4d92-bcfc-6eb32a3648d1",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              null
+            ],
+            "results": [
+              {
+                "output": null,
+                "task_id": "7a171870-b038-4174-84e1-29cdcc42f72c"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:46.448732+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:42:43.612068+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:42:41.826000+00:00",
+    "code": "ActionStarted",
+    "description": "State Getscript of type Action started",
+    "details": {
+      "state_name": "Getscript",
+      "state_type": "Action",
+      "input": {
+        "tasks": [
+          {
+            "endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+            "payload": {
+              "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+              "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+              "to_compute_transfer_sync_level": "checksum",
+              "_provenance_ls_transfer_sync_level": "checksum",
+              "_provenance__get_script_transfer_sync_level": "checksum",
+              "from_compute_transfer_sync_level": "checksum",
+              "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+              "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+              "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+              "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+              "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+              "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+              "to_compute_transfer_source_path": "/output/test.txt",
+              "to_compute_transfer_destination_path": "/input/test.txt",
+              "to_compute_transfer_recursive": false,
+              "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+              "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+              "from_compute_transfer_source_path": "/output/test.txt",
+              "from_compute_transfer_destination_path": "/input/test.txt",
+              "from_compute_transfer_recursive": false
+            },
+            "function": "6dab532b-ff62-448d-b57a-7e1fa22a81b8"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:42:41.826000+00:00",
+    "code": "ActionCompleted",
+    "description": "State Transfer_provenance_ls of type Action completed",
+    "details": {
+      "state_name": "Transfer_provenance_ls",
+      "state_type": "Action",
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferToCompute",
+          "action_id": "LI1CcDCLpCxT",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 0,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:41:37+00:00",
+            "deadline": "2024-05-03T23:41:29+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "destination_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 0,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:37+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:35+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id LI1CcDCLpCxT",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:41:29+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "source_endpoint_display_name": "LivePublication_Data_Staging",
+            "source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "7cbe0476-08dd-11ef-8aa4-993129235be9",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:41:06.944778+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:41:06.944747+00:00"
+        },
+        "Ls": {
+          "state_name": "Ls",
+          "action_id": "tg_b1b97c76-02af-466a-b2f9-c951bbfbeb89",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              [
+                "input",
+                "output",
+                "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+              ]
+            ],
+            "results": [
+              {
+                "output": [
+                  "input",
+                  "output",
+                  "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+                ],
+                "task_id": "b2bb0cea-ce63-4a83-ba58-74df9b8bce71"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:03.847899+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:41:51.667575+00:00"
+        },
+        "Transfer_provenance_ls": {
+          "state_name": "Transfer_provenance_ls",
+          "action_id": "lVM8twxW0SEp",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 1073,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:42:22+00:00",
+            "deadline": "2024-05-03T23:42:12+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_aamg32fforcqne6tmdhdm5s6ea#7f6e1696-e49a-11ee-83a9-63d4fb542fc4",
+            "destination_endpoint_display_name": "LivePublication_Orchestration_Workspace",
+            "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 1,
+            "effective_bytes_per_second": 115,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "PROGRESS",
+                "description": "progress",
+                "details": {
+                  "bytes_transferred": 1073,
+                  "duration": 3.02,
+                  "mbps": 0
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:22+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:42:19+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id lVM8twxW0SEp",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:42:12+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "source_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 3,
+            "subtasks_total": 3,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "965e7f50-08dd-11ef-82c0-57b5c7e2fa2b",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:42:06.827256+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:42:06.827227+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:42:04.567000+00:00",
+    "code": "ActionStarted",
+    "description": "State Transfer_provenance_ls of type Action started",
+    "details": {
+      "state_name": "Transfer_provenance_ls",
+      "state_type": "Action",
+      "input": {
+        "transfer_items": [
+          {
+            "recursive": true,
+            "source_path.=": "`$.Ls.details.results[0].task_id` + '.crate'",
+            "destination_path.=": "`$.input._provenance_crate_destination_directory` + '/' + `$.Ls.details.results[0].task_id`"
+          }
+        ],
+        "destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+        "source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d"
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:42:04.567000+00:00",
+    "code": "ActionCompleted",
+    "description": "State Ls of type Action completed",
+    "details": {
+      "state_name": "Ls",
+      "state_type": "Action",
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferToCompute",
+          "action_id": "LI1CcDCLpCxT",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 0,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:41:37+00:00",
+            "deadline": "2024-05-03T23:41:29+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "destination_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 0,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:37+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:35+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id LI1CcDCLpCxT",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:41:29+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "source_endpoint_display_name": "LivePublication_Data_Staging",
+            "source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "7cbe0476-08dd-11ef-8aa4-993129235be9",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:41:06.944778+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:41:06.944747+00:00"
+        },
+        "Ls": {
+          "state_name": "Ls",
+          "action_id": "tg_b1b97c76-02af-466a-b2f9-c951bbfbeb89",
+          "status": "SUCCEEDED",
+          "details": {
+            "result": [
+              [
+                "input",
+                "output",
+                "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+              ]
+            ],
+            "results": [
+              {
+                "output": [
+                  "input",
+                  "output",
+                  "aca695cd-82ec-4442-86b7-e2254bdbbc1a.crate"
+                ],
+                "task_id": "b2bb0cea-ce63-4a83-ba58-74df9b8bce71"
+              }
+            ]
+          },
+          "completion_time": "2024-05-02T23:42:03.847899+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "All tasks completed",
+          "label": null,
+          "manage_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "monitor_by": [
+            "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae"
+          ],
+          "release_after": null,
+          "start_time": "2024-05-02T23:41:51.667575+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:41:44.882000+00:00",
+    "code": "ActionStarted",
+    "description": "State Ls of type Action started",
+    "details": {
+      "state_name": "Ls",
+      "state_type": "Action",
+      "input": {
+        "tasks": [
+          {
+            "endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+            "payload": {
+              "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+              "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+              "to_compute_transfer_sync_level": "checksum",
+              "_provenance_ls_transfer_sync_level": "checksum",
+              "_provenance__get_script_transfer_sync_level": "checksum",
+              "from_compute_transfer_sync_level": "checksum",
+              "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+              "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+              "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+              "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+              "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+              "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+              "to_compute_transfer_source_path": "/output/test.txt",
+              "to_compute_transfer_destination_path": "/input/test.txt",
+              "to_compute_transfer_recursive": false,
+              "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+              "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+              "from_compute_transfer_source_path": "/output/test.txt",
+              "from_compute_transfer_destination_path": "/input/test.txt",
+              "from_compute_transfer_recursive": false
+            },
+            "function": "0944fd60-b64c-49f0-96fd-05c9c85d7360"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:41:44.882000+00:00",
+    "code": "ActionCompleted",
+    "description": "State TransferToCompute of type Action completed",
+    "details": {
+      "state_name": "TransferToCompute",
+      "state_type": "Action",
+      "output": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        },
+        "Transfer": {
+          "state_name": "TransferToCompute",
+          "action_id": "LI1CcDCLpCxT",
+          "status": "SUCCEEDED",
+          "details": {
+            "DATA_TYPE": "task",
+            "bytes_checksummed": 0,
+            "bytes_transferred": 0,
+            "canceled_by_admin": null,
+            "canceled_by_admin_message": null,
+            "command": "API 0.10",
+            "completion_time": "2024-05-02T23:41:37+00:00",
+            "deadline": "2024-05-03T23:41:29+00:00",
+            "delete_destination_extra": false,
+            "destination_base_path": null,
+            "destination_endpoint": "u_y5fvfz22yvbjdbotectbxzrs3i#7dda2e26-fb7b-11ee-b702-473d136f742f",
+            "destination_endpoint_display_name": "LivePublication_Exp_Compute_Workspace",
+            "destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+            "destination_local_user": null,
+            "destination_local_user_status": null,
+            "directories": 0,
+            "effective_bytes_per_second": 0,
+            "encrypt_data": false,
+            "event_list": [
+              {
+                "DATA_TYPE": "event",
+                "code": "SUCCEEDED",
+                "description": "succeeded",
+                "details": {
+                  "files_succeeded": 1
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:37+00:00"
+              },
+              {
+                "DATA_TYPE": "event",
+                "code": "STARTED",
+                "description": "started",
+                "details": {
+                  "concurrency": 2,
+                  "parallelism": 4,
+                  "pipelining": 20,
+                  "type": "GridFTP Transfer"
+                },
+                "is_error": false,
+                "time": "2024-05-02T23:41:35+00:00"
+              }
+            ],
+            "fail_on_quota_errors": false,
+            "fatal_error": null,
+            "faults": 0,
+            "files": 1,
+            "files_skipped": 0,
+            "files_transferred": 1,
+            "filter_rules": null,
+            "history_deleted": false,
+            "is_ok": null,
+            "is_paused": false,
+            "label": "For Action id LI1CcDCLpCxT",
+            "nice_status": null,
+            "nice_status_details": null,
+            "nice_status_expires_in": null,
+            "nice_status_short_description": null,
+            "owner_id": "25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+            "preserve_timestamp": false,
+            "recursive_symlinks": "ignore",
+            "request_time": "2024-05-02T23:41:29+00:00",
+            "skip_source_errors": false,
+            "source_base_path": null,
+            "source_endpoint": "u_nysfdrcrdzdrnb2eopmsex6m2e#7c2e7314-e0b3-11ee-83a1-63d4fb542fc4",
+            "source_endpoint_display_name": "LivePublication_Data_Staging",
+            "source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+            "source_local_user": null,
+            "source_local_user_status": null,
+            "status": "SUCCEEDED",
+            "subtasks_canceled": 0,
+            "subtasks_expired": 0,
+            "subtasks_failed": 0,
+            "subtasks_pending": 0,
+            "subtasks_retrying": 0,
+            "subtasks_skipped_errors": 0,
+            "subtasks_succeeded": 2,
+            "subtasks_total": 2,
+            "symlinks": 0,
+            "sync_level": null,
+            "task_id": "7cbe0476-08dd-11ef-8aa4-993129235be9",
+            "type": "TRANSFER",
+            "username": "u_ewxz2o5oxbhujheigjsk3avdvy",
+            "verify_checksum": false
+          },
+          "completion_time": "2024-05-02T23:41:06.944778+00:00",
+          "creator_id": "urn:globus:auth:identity:25af9d3b-aeb8-4f44-9c88-3264ad82a3ae",
+          "display_status": "SUCCEEDED",
+          "label": null,
+          "manage_by": [],
+          "monitor_by": [],
+          "release_after": "P30D",
+          "start_time": "2024-05-02T23:41:06.944747+00:00"
+        }
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:41:06.473000+00:00",
+    "code": "ActionStarted",
+    "description": "State TransferToCompute of type Action started",
+    "details": {
+      "state_name": "TransferToCompute",
+      "state_type": "Action",
+      "input": {
+        "transfer_items": [
+          {
+            "destination_path": "/input/test.txt",
+            "source_path": "/output/test.txt",
+            "recursive": false
+          }
+        ],
+        "destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+        "source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f"
+      }
+    }
+  },
+  {
+    "time": "2024-05-02T23:41:06.433000+00:00",
+    "code": "FlowStarted",
+    "description": "The Flow Instance started execution",
+    "details": {
+      "input": {
+        "input": {
+          "ls_function_id": "0944fd60-b64c-49f0-96fd-05c9c85d7360",
+          "GetScript_function_id": "6dab532b-ff62-448d-b57a-7e1fa22a81b8",
+          "to_compute_transfer_sync_level": "checksum",
+          "_provenance_ls_transfer_sync_level": "checksum",
+          "_provenance__get_script_transfer_sync_level": "checksum",
+          "from_compute_transfer_sync_level": "checksum",
+          "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
+          "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
+          "_provenance_crate_destination_directory": "bef81ab4-3b89-4b36-a26a-e1b98a564ec8",
+          "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "to_compute_transfer_source_path": "/output/test.txt",
+          "to_compute_transfer_destination_path": "/input/test.txt",
+          "to_compute_transfer_recursive": false,
+          "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+          "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+          "from_compute_transfer_source_path": "/output/test.txt",
+          "from_compute_transfer_destination_path": "/input/test.txt",
+          "from_compute_transfer_recursive": false
+        }
+      }
+    }
+  }
+]

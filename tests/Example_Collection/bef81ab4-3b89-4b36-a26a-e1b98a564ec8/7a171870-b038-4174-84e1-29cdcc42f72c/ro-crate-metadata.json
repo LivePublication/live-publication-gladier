@@ -1,0 +1,40 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+      {
+          "@id": "./",
+          "@type": "Dataset",
+          "datePublished": "2024-05-02T23:42:46+00:00",
+          "mainEntity": {
+              "@id": "#distributed_step"
+          }
+      },
+      {
+          "@id": "ro-crate-metadata.json",
+          "@type": "CreativeWork",
+          "about": {
+              "@id": "./"
+          },
+          "conformsTo": {
+              "@id": "https://w3id.org/ro/crate/1.1"
+          }
+      },
+      {
+          "@id": "#distributed_step",
+          "@type": [
+              "CreateAction",
+              "HowTo",
+              "ActionAccessSpecification",
+              "Schedule"
+          ],
+          "step": {
+              "@id": "#71062a4f-96d0-4d1e-a369-83db6aa1490e"
+          }
+      },
+      {
+          "@id": "#71062a4f-96d0-4d1e-a369-83db6aa1490e",
+          "@type": "HowToStep",
+          "position": "7a171870-b038-4174-84e1-29cdcc42f72c"
+      }
+  ]
+}
