@@ -1,1 +1,118 @@
-{"States": {"TransferToCompute": {"Comment": "Transfer a file or directory in Globus", "Type": "Action", "ActionUrl": "https://actions.automate.globus.org/transfer/transfer", "Parameters": {"source_endpoint_id.$": "$.input.to_compute_transfer_source_endpoint_id", "destination_endpoint_id.$": "$.input.to_compute_transfer_destination_endpoint_id", "transfer_items": [{"source_path.$": "$.input.to_compute_transfer_source_path", "destination_path.$": "$.input.to_compute_transfer_destination_path", "recursive.$": "$.input.to_compute_transfer_recursive"}]}, "ResultPath": "$.Transfer", "WaitTime": 600, "Next": "Ls"}, "Ls": {"Comment": "List files on the filesystem", "Type": "Action", "ActionUrl": "https://compute.actions.globus.org", "ExceptionOnActionFailure": false, "Parameters": {"tasks": [{"endpoint.$": "$.input.compute_endpoint", "function.$": "$.input.ls_function_id", "payload.$": "$.input"}]}, "ResultPath": "$.Ls", "WaitTime": 300, "Next": "Transfer_provenance_ls"}, "Transfer_provenance_ls": {"Comment": "Transfer a file or directory in Globus", "Type": "Action", "ActionUrl": "https://actions.automate.globus.org/transfer/transfer", "Parameters": {"source_endpoint_id.$": "$.input.prov_compute_GCS_id", "destination_endpoint_id.$": "$.input.orchestration_server_endpoint_id", "transfer_items": [{"recursive": true, "source_path.=": "`$.Ls.details.results[0].task_id` + '.crate'", "destination_path.=": "`$.input._provenance_crate_destination_directory` + '/' + `$.Ls.details.results[0].task_id`"}]}, "ResultPath": "$.Transfer_provenance_ls", "WaitTime": 600, "Next": "Getscript"}, "Getscript": {"Comment": "Grab the Bee Movie Script", "Type": "Action", "ActionUrl": "https://compute.actions.globus.org", "ExceptionOnActionFailure": false, "Parameters": {"tasks": [{"endpoint.$": "$.input.compute_endpoint", "function.$": "$.input.GetScript_function_id", "payload.$": "$.input"}]}, "ResultPath": "$.Getscript", "WaitTime": 300, "Next": "Transfer_provenance_GetScript"}, "Transfer_provenance_GetScript": {"Comment": "Transfer a file or directory in Globus", "Type": "Action", "ActionUrl": "https://actions.automate.globus.org/transfer/transfer", "Parameters": {"source_endpoint_id.$": "$.input.prov_compute_GCS_id", "destination_endpoint_id.$": "$.input.orchestration_server_endpoint_id", "transfer_items": [{"recursive": true, "source_path.=": "`$.Getscript.details.results[0].task_id` + '.crate'", "destination_path.=": "`$.input._provenance_crate_destination_directory` + '/' + `$.Getscript.details.results[0].task_id`"}]}, "ResultPath": "$.Transfer_provenance_GetScript", "WaitTime": 600, "Next": "TransferFromCompute"}, "TransferFromCompute": {"Comment": "Transfer a file or directory in Globus", "Type": "Action", "ActionUrl": "https://actions.automate.globus.org/transfer/transfer", "Parameters": {"source_endpoint_id.$": "$.input.from_compute_transfer_source_endpoint_id", "destination_endpoint_id.$": "$.input.from_compute_transfer_destination_endpoint_id", "transfer_items": [{"source_path.$": "$.input.from_compute_transfer_source_path", "destination_path.$": "$.input.from_compute_transfer_destination_path", "recursive.$": "$.input.from_compute_transfer_recursive"}]}, "ResultPath": "$.Transfer", "WaitTime": 600, "End": true}}, "Comment": "Flow with states: TransferToCompute, Ls, Transfer_provenance_ls, Getscript, Transfer_provenance_GetScript, TransferFromCompute", "StartAt": "TransferToCompute"}
+{
+    "States": {
+        "TransferToCompute": {
+            "Comment": "Transfer a file or directory in Globus",
+            "Type": "Action",
+            "ActionUrl": "https://actions.automate.globus.org/transfer/transfer",
+            "Parameters": {
+                "source_endpoint_id.$": "$.input.to_compute_transfer_source_endpoint_id",
+                "destination_endpoint_id.$": "$.input.to_compute_transfer_destination_endpoint_id",
+                "transfer_items": [
+                    {
+                        "source_path.$": "$.input.to_compute_transfer_source_path",
+                        "destination_path.$": "$.input.to_compute_transfer_destination_path",
+                        "recursive.$": "$.input.to_compute_transfer_recursive"
+                    }
+                ]
+            },
+            "ResultPath": "$.Transfer",
+            "WaitTime": 600,
+            "Next": "Ls"
+        },
+        "Ls": {
+            "Comment": "List files on the filesystem",
+            "Type": "Action",
+            "ActionUrl": "https://compute.actions.globus.org",
+            "ExceptionOnActionFailure": false,
+            "Parameters": {
+                "tasks": [
+                    {
+                        "endpoint.$": "$.input.compute_endpoint",
+                        "function.$": "$.input.ls_function_id",
+                        "payload.$": "$.input"
+                    }
+                ]
+            },
+            "ResultPath": "$.Ls",
+            "WaitTime": 300,
+            "Next": "Transfer_provenance_ls"
+        },
+        "Transfer_provenance_ls": {
+            "Comment": "Transfer a file or directory in Globus",
+            "Type": "Action",
+            "ActionUrl": "https://actions.automate.globus.org/transfer/transfer",
+            "Parameters": {
+                "source_endpoint_id.$": "$.input.prov_compute_GCS_id",
+                "destination_endpoint_id.$": "$.input.orchestration_server_endpoint_id",
+                "transfer_items": [
+                    {
+                        "recursive": true,
+                        "source_path.=": "`$.Ls.details.results[0].task_id` + '.crate'",
+                        "destination_path.=": "`$.input._provenance_crate_destination_directory` + '/' + `$.Ls.details.results[0].task_id`"
+                    }
+                ]
+            },
+            "ResultPath": "$.Transfer_provenance_ls",
+            "WaitTime": 600,
+            "Next": "Getscript"
+        },
+        "Getscript": {
+            "Comment": "Grab the Bee Movie Script",
+            "Type": "Action",
+            "ActionUrl": "https://compute.actions.globus.org",
+            "ExceptionOnActionFailure": false,
+            "Parameters": {
+                "tasks": [
+                    {
+                        "endpoint.$": "$.input.compute_endpoint",
+                        "function.$": "$.input.GetScript_function_id",
+                        "payload.$": "$.input"
+                    }
+                ]
+            },
+            "ResultPath": "$.Getscript",
+            "WaitTime": 300,
+            "Next": "Transfer_provenance_GetScript"
+        },
+        "Transfer_provenance_GetScript": {
+            "Comment": "Transfer a file or directory in Globus",
+            "Type": "Action",
+            "ActionUrl": "https://actions.automate.globus.org/transfer/transfer",
+            "Parameters": {
+                "source_endpoint_id.$": "$.input.prov_compute_GCS_id",
+                "destination_endpoint_id.$": "$.input.orchestration_server_endpoint_id",
+                "transfer_items": [
+                    {
+                        "recursive": true,
+                        "source_path.=": "`$.Getscript.details.results[0].task_id` + '.crate'",
+                        "destination_path.=": "`$.input._provenance_crate_destination_directory` + '/' + `$.Getscript.details.results[0].task_id`"
+                    }
+                ]
+            },
+            "ResultPath": "$.Transfer_provenance_GetScript",
+            "WaitTime": 600,
+            "Next": "TransferFromCompute"
+        },
+        "TransferFromCompute": {
+            "Comment": "Transfer a file or directory in Globus",
+            "Type": "Action",
+            "ActionUrl": "https://actions.automate.globus.org/transfer/transfer",
+            "Parameters": {
+                "source_endpoint_id.$": "$.input.from_compute_transfer_source_endpoint_id",
+                "destination_endpoint_id.$": "$.input.from_compute_transfer_destination_endpoint_id",
+                "transfer_items": [
+                    {
+                        "source_path.$": "$.input.from_compute_transfer_source_path",
+                        "destination_path.$": "$.input.from_compute_transfer_destination_path",
+                        "recursive.$": "$.input.from_compute_transfer_recursive"
+                    }
+                ]
+            },
+            "ResultPath": "$.Transfer",
+            "WaitTime": 600,
+            "End": true
+        }
+    },
+    "Comment": "Flow with states: TransferToCompute, Ls, Transfer_provenance_ls, Getscript, Transfer_provenance_GetScript, TransferFromCompute",
+    "StartAt": "TransferToCompute"
+}
