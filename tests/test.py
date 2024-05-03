@@ -21,13 +21,11 @@ class client(ProvenanceBaseClient):
 
 test_client = client()
 flow_definition = test_client.get_flow_definition() # This is the WEP
-# Define the path to save the flow definition
 output_dir = os.path.join(os.path.dirname(__file__), 'Example_Collection')
 output_file = os.path.join(output_dir, 'WEP.json')
 
-# Write the flow definition to the output file
 with open(output_file, 'w') as f:
-    json.dump(flow_definition, f)
+    json.dump(flow_definition, f, indent=4)
 
 print(f"Flow definition saved to {output_file}")
 
