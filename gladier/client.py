@@ -480,12 +480,19 @@ class GladierBaseClient(object):
         :param flow_input: Flow input intended to be passed to run_flow()
         :raises: gladier.exc.ConfigException
         """
-        pass
-        # for req_input in tool.get_required_input():
-        #     if req_input not in flow_input["input"]:
-        #         raise gladier.exc.ConfigException(
-        #             f'{tool} requires flow input value: "{req_input}"'
-        #         )
+        def _chain_has_key(data: dict, key: str) -> bool:
+            keys = key.split(".")
+            for k in keys:
+                if k not in data:
+                    return False
+                data = data[k]
+            return True
+
+        for req_input in tool.get_required_input():
+            if not _chain_has_key(flow_input["input"], req_input):
+                raise gladier.exc.ConfigException(
+                    f'{tool} requires flow input value: "{req_input}"'
+                )
 
     def get_status(self, action_id: str):
         """
