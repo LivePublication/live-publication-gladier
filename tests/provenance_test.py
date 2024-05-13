@@ -9,16 +9,31 @@ exp_compute_GCS_uuid = '8ee44381-114a-45de-b8f8-d105a90c200d'
 o_server_GCS_uuid = '4a420ad5-4113-4d7d-aba2-883f8208e897'
 data_store_uuid = 'b782400e-3e59-412c-8f73-56cd0782301f'
 
+orch_input_file = '/input/test.txt'
+orch_output_file = '/output/test.txt'
+
+rev_input_file = '/rev_text/input/test.txt'
+rev_output_file = '/rev_text/output/test.txt'
+
+sort_input_file = '/sort_text/input/test.txt'
+sort_output_file = '/sort_text/output/test.txt'
+
 ToCompute_source_uuid = data_store_uuid
 ToCompute_dest_uuid = exp_compute_GCS_uuid
-ToCompute_source_path = '/input/test.txt'  # step in = run in
-ToCompute_dest_path = '/input/test.txt'
+ToCompute_source_path = orch_input_file
+ToCompute_dest_path = rev_input_file
 ToCompute_recursive = False
+
+RT_ST_source_uuid = exp_compute_GCS_uuid
+RT_ST_dest_uuid = exp_compute_GCS_uuid
+RT_ST_source_path = rev_output_file
+RT_ST_dest_path = sort_input_file
+RT_ST_recursive = False
 
 FromCompute_source_uuid = exp_compute_GCS_uuid
 FromCompute_dest_uuid = data_store_uuid
-FromCompute_source_path = '/output/test.txt'
-FromCompute_dest_path = '/output/test.txt'  # step out = run out
+FromCompute_source_path = sort_input_file
+FromCompute_dest_path = orch_output_file
 FromCompute_recursive = False
 
 
@@ -56,6 +71,11 @@ class SortText(ProvenanceBaseTool):
 
     compute_functions = [sort_txt]
 
+    # Defaults
+    flow_input = {
+        'SortTxt': {'reverse': False}
+    }
+
 
 @generate_flow_definition
 class client(ProvenanceBaseClient):
@@ -63,7 +83,7 @@ class client(ProvenanceBaseClient):
     gladier_tools = [
         "gladier_tools.globus.Transfer:ToCompute",
         ReverseText,
-        # TODO - transfer between steps?
+        "gladier_tools.globus.Transfer:RT_ST",
         SortText,
         "gladier_tools.globus.Transfer:FromCompute",
         ]
@@ -105,6 +125,12 @@ if __name__ == '__main__':
             "to_compute_transfer_destination_path": ToCompute_dest_path,
             "to_compute_transfer_recursive": ToCompute_recursive,
 
+            "rt_st_transfer_source_endpoint_id": RT_ST_source_uuid,
+            "rt_st_transfer_destination_endpoint_id": RT_ST_dest_uuid,
+            "rt_st_transfer_source_path": RT_ST_source_path,
+            "rt_st_transfer_destination_path": RT_ST_dest_path,
+            "rt_st_transfer_recursive": RT_ST_recursive,
+
             "from_compute_transfer_source_endpoint_id": FromCompute_source_uuid,
             "from_compute_transfer_destination_endpoint_id": FromCompute_dest_uuid,
             "from_compute_transfer_source_path": FromCompute_source_path,
@@ -113,12 +139,12 @@ if __name__ == '__main__':
 
             # Compute inputs
             'RevTxt': {   # Note that these are name from the function, not the tool, as tools may have multiple functions
-                'input_file': '/input/test.txt',
-                'output_file': '/output/test.txt',
+                'input_file': rev_input_file,
+                'output_file': rev_output_file,
             },
             'SortTxt': {
-                'input_file': '/input/test.txt',
-                'output_file': '/output/test.txt',
+                'input_file': sort_input_file,
+                'output_file': sort_output_file,
                 'reverse': True,
             },
         }}
