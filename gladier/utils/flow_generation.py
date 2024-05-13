@@ -95,6 +95,5 @@ def generate_compute_flow_state(compute_function):
     }
 
 def post_process_provenance_flow(client: ProvenanceBaseClient, modifiers):
-
-    print(modifiers)
-    pass
+    # Temporary implementation
+    return combine_tool_flows(client, modifiers)

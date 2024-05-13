@@ -38,13 +38,13 @@ def generate_flow_definition(_cls=None, *, modifiers=None):
                 c = cls(*args, **kwargs)
                 c.flow_definition = generate_tool_flow(c, modifiers)
                 return c
+            elif issubclass(cls, ProvenanceBaseClient):  # Before GladierBaseClient as it is a subclass
+                c = cls(*args, **kwargs)
+                c.flow_definition = post_process_provenance_flow(c, modifiers)
+                return c
             elif issubclass(cls, GladierBaseClient):
                 c = cls(*args, **kwargs)
                 c.flow_definition = combine_tool_flows(c, modifiers)
-                return c
-            elif issubclass(cls, ProvenanceBaseClient):
-                c = cls(*args, **kwargs)
-                c.flow_definition = post_process_provenance_flow(c, modifiers)
                 return c
             else:
                 raise FlowGenException(
