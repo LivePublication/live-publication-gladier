@@ -244,19 +244,9 @@ class GladierBaseClient(object):
                     'Ex: ["gladier.tools.hello_world.HelloWorld"]'
                 )
         
-        for gt in gtools:
-                for count, func in enumerate(gt.compute_functions):
-                    # print(count, func.__name__)
-                    """ 
-                    TODO: How do multiple compute functions executed as a 
-                    single tool/step get handled? Dist Step Crate per function?
-                    """
-                    gtools.insert(gtools.index(gt) + count + 1, f"gladier_tools.globus.Transfer:_provenance_{func.__name__}")
-
         self._tools = [
             self.get_gladier_defaults_cls(gt, self.alias_class) for gt in gtools
         ]
-
 
         return self._tools
 
