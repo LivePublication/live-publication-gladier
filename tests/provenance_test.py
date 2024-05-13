@@ -149,3 +149,5 @@ if __name__ == '__main__':
         json.dump(full_input, f, indent=4)
 
     # TODO: run flow
+    for tool in test_client.tools:
+        test_client.check_input(tool, full_input)

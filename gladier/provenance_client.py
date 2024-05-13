@@ -1,11 +1,8 @@
 from __future__ import annotations
 
-import typing as t
-import types
-
 import logging
-import os
-import pathlib
+import types
+import typing as t
 from collections.abc import Iterable
 
 import gladier
@@ -18,16 +15,13 @@ import gladier.utils.dynamic_imports
 import gladier.utils.name_generation
 import gladier.utils.tool_alias
 import gladier.version
-from gladier.base import GladierBaseTool
 from gladier.client import GladierBaseClient
 from gladier.managers import ComputeManager, FlowsManager
 from gladier.managers.login_manager import (
-    AutoLoginManager,
     BaseLoginManager,
-    ConfidentialClientLoginManager,
 )
-from gladier.storage.tokens import GladierSecretsConfig
-import pprint
+from gladier.provenance_transfers import DistCrateTransfer
+from gladier.utils.tool_alias import StateSuffixVariablePrefix
 
 log = logging.getLogger(__name__)
 
@@ -92,7 +86,8 @@ class ProvenanceBaseClient(GladierBaseClient):
                     TODO: How do multiple compute functions executed as a 
                     single tool/step get handled? Dist Step Crate per function?
                     """
-                    gtools.insert(gtools.index(gt) + count + 1, f"gladier_tools.globus.Transfer:_provenance_{func.__name__}")
+                    gtools.insert(gtools.index(gt) + count + 1, DistCrateTransfer(f"_provenance_{func.__name__}",
+                                                                                  StateSuffixVariablePrefix))
 
         self._tools = [
             self.get_gladier_defaults_cls(gt, self.alias_class) for gt in gtools
