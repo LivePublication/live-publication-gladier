@@ -1,3 +1,4 @@
+import copy
 import inspect
 from typing import List, Mapping, Any
 
@@ -35,7 +36,7 @@ class ProvenanceBaseTool(GladierBaseTool):
         return inputs
 
     def get_required_input(self) -> List[str]:
-        required = super().get_required_input()
+        required = copy.deepcopy(super().get_required_input())
 
         # Add compute function parameters as required inputs
         # TODO: check if this conflicts with intended usage of required_inputs
