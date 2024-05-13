@@ -86,8 +86,7 @@ class ProvenanceBaseClient(GladierBaseClient):
                     TODO: How do multiple compute functions executed as a 
                     single tool/step get handled? Dist Step Crate per function?
                     """
-                    gtools.insert(gtools.index(gt) + count + 1, DistCrateTransfer(f"_provenance_{func.__name__}",
-                                                                                  StateSuffixVariablePrefix))
+                    gtools.insert(gtools.index(gt) + count + 1, DistCrateTransfer(func.__name__))
 
         self._tools = [
             self.get_gladier_defaults_cls(gt, self.alias_class) for gt in gtools
@@ -104,34 +103,7 @@ class ProvenanceBaseClient(GladierBaseClient):
         """
         try:
             if isinstance(self.flow_definition, dict):
-                prev_state_name = None
-                prev_state_data = None
-
-                for state_name, state_data in self.flow_definition["States"].items():
-                    if "provenance" in state_name:
-                        state_data["ResultPath"] = f"$.{state_name}"
-                        transfer_parameters = state_data["Parameters"]
-                        transfer_items = transfer_parameters["transfer_items"]
-
-                        # Source and destination endpoints may be set dynamcially
-
-                        # Transfer items (Distriubted Step Crates) are always
-                        # named {task_id}.crate
-
-                        transfer_items[0].pop("recursive.$", None)
-                        transfer_items[0]["recursive"] = True
-
-                        transfer_items[0].pop("source_path.$", None)
-                        transfer_items[0]["source_path.="] = f"`{prev_state_data["ResultPath"]}.details.results[0].task_id` + '.crate'"
-                        transfer_items[0].pop("destination_path.$", None)
-                        transfer_items[0]['destination_path.='] = f"`$.input._provenance_crate_destination_directory` + '/' + `{prev_state_data["ResultPath"]}.details.results[0].task_id`"
-
-                        transfer_parameters["source_endpoint_id.$"] = "$.input.prov_compute_GCS_id"
-                        transfer_parameters["destination_endpoint_id.$"] = "$.input.orchestration_server_endpoint_id"                  
-                
-                    prev_state_name = state_name
-                    prev_state_data = state_data
-
+                # TODO: may still need to augment dist crate transfers with previous step resultPath
                 return self.flow_definition
             elif isinstance(self.flow_definition, str):
                 return self.get_gladier_defaults_cls(
