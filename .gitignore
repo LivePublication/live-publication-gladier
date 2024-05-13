@@ -140,3 +140,5 @@ cython_debug/
 # For emacs users
 .dir-locals.el
 
+# IntelliJ project files
+.idea/
