@@ -27,7 +27,7 @@ provenance_modifiers = {
     "Provenance",
     "OrchestrationServer_UUID",
     "ProvenanceDirectory"
-    }
+}
 
 
 class FlowModifiers:
@@ -87,45 +87,43 @@ class FlowModifiers:
                     f'{", ".join(self.function_names)} and'
                     f" {", ".join(provenance_modifiers)}"
                 )
-            
+
             for mod_name, mod_value in mods.items():
                 if mod_name not in self.supported_modifiers:
                     raise FlowModifierException(
                         f"Class {self.cls}: Unsupported modifier "
                         f'"{mod_name}". The only supported modifiers are: '
                         f"{self.supported_modifiers}"
-                        )
+                    )
 
     def apply_modifiers(self, flow):
         for name, mods in self.modifiers.items():
             if name in provenance_modifiers:
                 flow_states = list(flow["States"].items())
                 for index, (state_name, state) in enumerate(flow_states):
-                    if ("provenance" in state_name 
-                        and state.get("ActionUrl") == "https://actions.automate.globus.org/transfer/transfer"):
+                    if ("provenance" in state_name
+                            and state.get("ActionUrl") == "https://actions.automate.globus.org/transfer/transfer"):
                         log.debug(f"Configuring provenance transfer {state_name}" +
-                                  f"for provenance compute step {flow_states[index-1][0]}")
+                                  f"for provenance compute step {flow_states[index - 1][0]}")
                         flow["States"][state_name] = self.apply_modifier(
-                            flow["States"][state_name], mods, flow_states[index-1]
+                            flow["States"][state_name], mods, flow_states[index - 1]
                         )
             else:
                 state_name = self.get_flow_state_name(name)
                 flow["States"][state_name] = self.apply_modifier(
-                flow["States"][state_name], mods
+                    flow["States"][state_name], mods
                 )
-                
+
         return flow
 
     def apply_modifier(self, flow_state, state_modifiers, prev_flow_state=None):
         if prev_flow_state:
             # only included if provenance modifiers are present
             try:
-                # Currently doesnt do anything. 
+                # TODO: Currently doesnt do anything.
                 OS_UUID = state_modifiers["OrchestrationServer_UUID"]
                 Prov_DIR = state_modifiers["ProvenanceDirectory"]
                 prev_state_name, prev_state = prev_flow_state
-
-                #TODO
 
                 return flow_state
             except KeyError as e:
