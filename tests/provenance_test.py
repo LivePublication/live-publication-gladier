@@ -32,7 +32,7 @@ RT_ST_recursive = False
 
 FromCompute_source_uuid = exp_compute_GCS_uuid
 FromCompute_dest_uuid = data_store_uuid
-FromCompute_source_path = sort_input_file
+FromCompute_source_path = sort_output_file
 FromCompute_dest_path = orch_output_file
 FromCompute_recursive = False
 
