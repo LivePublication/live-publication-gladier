@@ -52,33 +52,35 @@ FromCompute_dest_path = '/input/test.txt'
 FromCompute_recursive = False
 
 
-# flow = test_client.run_flow(flow_input={
-#     "input": {
-#         # Compute & provenance config
-#         'compute_endpoint': exp_compute_endpoint_uuid, 
-#         'prov_compute_GCS_id': exp_compute_GCS_uuid,
-#         'orchestration_server_endpoint_id': o_server_GCS_uuid,
-#         '_provenance_crate_destination_directory': flow_id,
+flow = test_client.run_flow(flow_input={
+    "input": {
+        # Compute & provenance config
+        'compute_endpoint': exp_compute_endpoint_uuid, 
+        'prov_compute_GCS_id': exp_compute_GCS_uuid,
+        'orchestration_server_endpoint_id': o_server_GCS_uuid,
+        '_provenance_crate_destination_directory': flow_id,
 
-#         # Transfer configs
-#         "to_compute_transfer_source_endpoint_id": ToCompute_source_uuid,
-#         "to_compute_transfer_destination_endpoint_id": ToCompute_dest_uuid,
-#         "to_compute_transfer_source_path": ToCompute_source_path,
-#         "to_compute_transfer_destination_path": ToCompute_dest_path,
-#         "to_compute_transfer_recursive": ToCompute_recursive,
+        # Transfer configs
+        "to_compute_transfer_source_endpoint_id": ToCompute_source_uuid,
+        "to_compute_transfer_destination_endpoint_id": ToCompute_dest_uuid,
+        "to_compute_transfer_source_path": ToCompute_source_path,
+        "to_compute_transfer_destination_path": ToCompute_dest_path,
+        "to_compute_transfer_recursive": ToCompute_recursive,
 
-#         "from_compute_transfer_source_endpoint_id": FromCompute_source_uuid,
-#         "from_compute_transfer_destination_endpoint_id": FromCompute_dest_uuid,
-#         "from_compute_transfer_source_path": FromCompute_source_path,
-#         "from_compute_transfer_destination_path": FromCompute_dest_path,
-#         "from_compute_transfer_recursive": FromCompute_recursive
-#         }
-#     },
-#     label='test')
+        "from_compute_transfer_source_endpoint_id": FromCompute_source_uuid,
+        "from_compute_transfer_destination_endpoint_id": FromCompute_dest_uuid,
+        "from_compute_transfer_source_path": FromCompute_source_path,
+        "from_compute_transfer_destination_path": FromCompute_dest_path,
+        "from_compute_transfer_recursive": FromCompute_recursive
+        }
+    },
+    label='test')
 
 # # # # Track the progress
-# action_id = flow["action_id"]
-# test_client.progress(action_id)
-# pprint(test_client.get_status(action_id))
+action_id = flow["action_id"]
+test_client.progress(action_id)
+pprint(test_client.get_status(action_id))
+
+
 
 
