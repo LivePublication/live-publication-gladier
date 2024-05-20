@@ -34,8 +34,8 @@ test_client.sync_flow()
 flow_id = test_client.flows_manager.get_flow_id()
 
 # Flow configuration details
-exp_compute_endpoint_uuid = '58fb6f2d-ff78-4f39-9669-38c12d01f566'
-exp_compute_GCS_uuid = '8ee44381-114a-45de-b8f8-d105a90c200d'
+exp_compute_endpoint_uuid = 'e8c8b86f-a6fb-4c5b-9bc0-45423336f0c5'
+exp_compute_GCS_uuid = 'abe41251-eb3c-4cc5-b329-cf9fe8fadcf1'
 o_server_GCS_uuid = '4a420ad5-4113-4d7d-aba2-883f8208e897'
 data_store_uuid = 'b782400e-3e59-412c-8f73-56cd0782301f'
 
