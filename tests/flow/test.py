@@ -53,6 +53,7 @@ if __name__ == '__main__':
     print(f"Flow definition saved to {output_file}")
 
     # Sync flow with Globus and get the flow_id for prov folder
+    test_client.flows_manager.register_flow()
     test_client.sync_flow()
     flow_id = test_client.flows_manager.get_flow_id()
 
@@ -75,9 +76,22 @@ if __name__ == '__main__':
             "from_compute_transfer_destination_endpoint_id": FromCompute_dest_uuid,
             "from_compute_transfer_source_path": FromCompute_source_path,
             "from_compute_transfer_destination_path": FromCompute_dest_path,
-            "from_compute_transfer_recursive": FromCompute_recursive
+            "from_compute_transfer_recursive": FromCompute_recursive,
+
+            'Ls': {
+                'data': {}
+            },
+            'Getscript': {
+                'data': {}
+            }
         }}
 
+    # Combine default inputs (e.g.: function ids) with explicit inputs and save to file
+    full_input = test_client.get_input()
+    full_input['input'].update(_input['input'])
+    output_file = output_dir / 'input.json'
+    with open(output_file, 'w') as f:
+        json.dump(full_input, f, indent=4)
 
     # Run flow and track progress
     flow = test_client.run_flow(flow_input=_input, label='test flow')

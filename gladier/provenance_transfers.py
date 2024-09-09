@@ -23,7 +23,7 @@ class DistCrateTransfer(Transfer):
     ]
 
     def __init__(self, func_name: str):
-        alias = f'_provenance_{func_name}'
+        alias = f'_provenance_{func_name}'  # TODO: should be camel case
         super().__init__(alias, StateSuffixVariablePrefix)
         # TODO: we're making assumptions about both the function name, and it's ResultPath
         #   this is currently necessary as we don't have access to the previous state in get_flow_definition()

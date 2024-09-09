@@ -1,11 +1,12 @@
 import json
 from pathlib import Path
+from pprint import pprint
 
 from gladier import ProvenanceBaseClient, generate_flow_definition, ProvenanceBaseTool
 
 # Flow configuration details
-exp_compute_endpoint_uuid = '58fb6f2d-ff78-4f39-9669-38c12d01f566'
-exp_compute_GCS_uuid = '8ee44381-114a-45de-b8f8-d105a90c200d'
+exp_compute_endpoint_uuid = 'e8c8b86f-a6fb-4c5b-9bc0-45423336f0c5'
+exp_compute_GCS_uuid = 'abe41251-eb3c-4cc5-b329-cf9fe8fadcf1'
 o_server_GCS_uuid = '4a420ad5-4113-4d7d-aba2-883f8208e897'
 data_store_uuid = 'b782400e-3e59-412c-8f73-56cd0782301f'
 
@@ -31,7 +32,7 @@ RT_ST_dest_path = sort_input_file
 RT_ST_recursive = False
 
 FromCompute_source_uuid = exp_compute_GCS_uuid
-FromCompute_dest_uuid = data_store_uuid
+FromCompute_dest_uuid = o_server_GCS_uuid  # Where should this go?
 FromCompute_source_path = sort_output_file
 FromCompute_dest_path = orch_output_file
 FromCompute_recursive = False
@@ -42,6 +43,9 @@ def rev_txt(input_file, output_file):
         lines = f.readlines()
     lines = [line.strip() for line in lines]
     lines = [line[::-1] for line in lines if line]
+
+    from pathlib import Path
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w') as f:
         f.write('\n'.join(lines))
 
@@ -61,6 +65,9 @@ def sort_txt(input_file: str, output_file: str, reverse: bool):
     lines.sort()
     if reverse:
         lines = lines[::-1]
+
+    from pathlib import Path
+    Path(output_file).parent.mkdir(parents=True, exist_ok=True)
     with open(output_file, 'w') as f:
         f.write('\n'.join(lines))
 
@@ -105,8 +112,8 @@ if __name__ == '__main__':
         json.dump(flow_definition, f, indent=4)
 
     # Register flow
-    test_client.flows_manager.register_flow()
     test_client.sync_flow()
+    test_client.flows_manager.register_flow()
     flow_id = test_client.flows_manager.get_flow_id()
 
     # Define input
@@ -139,12 +146,12 @@ if __name__ == '__main__':
 
             # Compute inputs
             'RevTxt': {   # Note that these are name from the function, not the tool, as tools may have multiple functions
-                'input_file': rev_input_file,
-                'output_file': rev_output_file,
+                'input_file': f'.{rev_input_file}',
+                'output_file': f'.{rev_output_file}',
             },
             'SortTxt': {
-                'input_file': sort_input_file,
-                'output_file': sort_output_file,
+                'input_file': f'.{sort_input_file}',
+                'output_file': f'.{sort_output_file}',
                 'reverse': True,
             },
         }}
@@ -177,3 +184,10 @@ if __name__ == '__main__':
     # TODO: run flow
     for tool in test_client.tools:
         test_client.check_input(tool, full_input)
+
+    # Run flow
+    flow = test_client.run_flow(flow_input=_input, label='provenance test flow')
+
+    action_id = flow["action_id"]
+    test_client.progress(action_id)
+    pprint(test_client.get_status(action_id))

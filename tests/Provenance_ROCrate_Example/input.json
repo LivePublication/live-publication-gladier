@@ -1,39 +1,39 @@
 {
     "input": {
-        "rev_txt_function_id": "60232236-4b25-4a92-84a2-0b8e30feaaa7",
-        "sort_txt_function_id": "543e2e7d-3f5f-4df8-90a6-daf2ab905864",
+        "rev_txt_function_id": "53efa69a-aebd-45cc-b1e4-ef886198606e",
+        "sort_txt_function_id": "1e9c7bc6-7737-4e4a-9620-133a0b3f44bb",
         "to_compute_transfer_sync_level": "checksum",
         "_provenance_rev_txt_transfer_sync_level": "checksum",
         "rt_st_transfer_sync_level": "checksum",
         "SortTxt": {
-            "input_file": "/sort_text/input/test.txt",
-            "output_file": "/sort_text/output/test.txt",
+            "input_file": "./sort_text/input/test.txt",
+            "output_file": "./sort_text/output/test.txt",
             "reverse": true
         },
         "_provenance_sort_txt_transfer_sync_level": "checksum",
         "from_compute_transfer_sync_level": "checksum",
-        "compute_endpoint": "58fb6f2d-ff78-4f39-9669-38c12d01f566",
-        "prov_compute_GCS_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+        "compute_endpoint": "e8c8b86f-a6fb-4c5b-9bc0-45423336f0c5",
+        "prov_compute_GCS_id": "abe41251-eb3c-4cc5-b329-cf9fe8fadcf1",
         "orchestration_server_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
-        "_provenance_crate_destination_directory": "13fe2659-32f1-414b-b3a8-2c6b096967da",
+        "_provenance_crate_destination_directory": "b2b2d48c-f7ad-4650-ace1-318b191efeee",
         "to_compute_transfer_source_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
-        "to_compute_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+        "to_compute_transfer_destination_endpoint_id": "abe41251-eb3c-4cc5-b329-cf9fe8fadcf1",
         "to_compute_transfer_source_path": "/input/test.txt",
         "to_compute_transfer_destination_path": "/rev_text/input/test.txt",
         "to_compute_transfer_recursive": false,
-        "rt_st_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
-        "rt_st_transfer_destination_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
+        "rt_st_transfer_source_endpoint_id": "abe41251-eb3c-4cc5-b329-cf9fe8fadcf1",
+        "rt_st_transfer_destination_endpoint_id": "abe41251-eb3c-4cc5-b329-cf9fe8fadcf1",
         "rt_st_transfer_source_path": "/rev_text/output/test.txt",
         "rt_st_transfer_destination_path": "/sort_text/input/test.txt",
         "rt_st_transfer_recursive": false,
-        "from_compute_transfer_source_endpoint_id": "8ee44381-114a-45de-b8f8-d105a90c200d",
-        "from_compute_transfer_destination_endpoint_id": "b782400e-3e59-412c-8f73-56cd0782301f",
+        "from_compute_transfer_source_endpoint_id": "abe41251-eb3c-4cc5-b329-cf9fe8fadcf1",
+        "from_compute_transfer_destination_endpoint_id": "4a420ad5-4113-4d7d-aba2-883f8208e897",
         "from_compute_transfer_source_path": "/sort_text/output/test.txt",
         "from_compute_transfer_destination_path": "/output/test.txt",
         "from_compute_transfer_recursive": false,
         "RevTxt": {
-            "input_file": "/rev_text/input/test.txt",
-            "output_file": "/rev_text/output/test.txt"
+            "input_file": "./rev_text/input/test.txt",
+            "output_file": "./rev_text/output/test.txt"
         }
     }
 }
