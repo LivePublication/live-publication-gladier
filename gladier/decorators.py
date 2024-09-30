@@ -1,9 +1,6 @@
 import functools
-
-from gladier import ProvenanceBaseTool
 from gladier.base import GladierBaseTool
 from gladier.client import GladierBaseClient
-from gladier.provenance_client import ProvenanceBaseClient
 from gladier.exc import FlowGenException
 from gladier.utils.flow_generation import generate_tool_flow, combine_tool_flows
 
@@ -36,13 +33,7 @@ def generate_flow_definition(_cls=None, *, modifiers=None):
     def decorator_wrapper(cls):
         @functools.wraps(cls)
         def wrapper(*args, **kwargs):
-            if issubclass(cls, ProvenanceBaseTool):
-                c = cls(*args, **kwargs)
-                c.flow_definition = generate_tool_flow(c, modifiers)
-                for state_name, state_data in c.flow_definition["States"].items():
-                    state_data['Parameters']['tasks'][0]['payload.$'] = f'$.input.{state_name}'
-                return c
-            elif issubclass(cls, GladierBaseTool):
+            if issubclass(cls, GladierBaseTool):
                 c = cls(*args, **kwargs)
                 c.flow_definition = generate_tool_flow(c, modifiers)
                 return c
@@ -54,7 +45,7 @@ def generate_flow_definition(_cls=None, *, modifiers=None):
                 raise FlowGenException(
                     f"Invalid class {cls}, flow generation "
                     f"only supported for "
-                    f"{[GladierBaseTool, GladierBaseClient, ProvenanceBaseClient]}"
+                    f"{[GladierBaseTool, GladierBaseClient]}"
                 )
 
         return wrapper

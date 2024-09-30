@@ -2,7 +2,6 @@ import logging
 import typing
 from gladier.base import GladierBaseTool
 from gladier.client import GladierBaseClient
-from gladier.provenance_client import ProvenanceBaseClient
 from gladier.exc import FlowGenException
 from gladier.utils.flow_modifiers import FlowModifiers
 from gladier.utils.name_generation import (

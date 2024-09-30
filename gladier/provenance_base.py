@@ -9,16 +9,11 @@ from gladier.utils.tool_alias import ToolAlias
 
 
 class ProvenanceBaseTool(GladierBaseTool):
-    def __init__(self, alias: str = None, alias_class: ToolAlias = None):
-        super().__init__(alias, alias_class)
-        # Add any additional initialization code here
-
     def get_flow_definition(self) -> Mapping[str, Any]:
         flow_definition = super().get_flow_definition()
         for state_name, state_data in iter_flow(flow_definition):
-            # Add any modifications to the flow definition here
-            # TODO: Add function parameters as parameters to flow definition?
-            pass
+            if state_data['Parameters']['tasks'][0]['payload.$'] == '$.input':
+                state_data['Parameters']['tasks'][0]['payload.$'] = f'$.input.{state_name}'
         return flow_definition
 
     def get_function_inputs(self) -> Mapping[str, type]:
