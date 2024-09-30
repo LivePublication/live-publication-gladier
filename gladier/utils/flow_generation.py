@@ -93,7 +93,3 @@ def generate_compute_flow_state(compute_function):
         "ResultPath": f"$.{state_name}",
         "WaitTime": 300,
     }
-
-def post_process_provenance_flow(client: ProvenanceBaseClient, modifiers):
-    # Temporary implementation
-    return combine_tool_flows(client, modifiers)

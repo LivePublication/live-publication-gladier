@@ -5,7 +5,7 @@ from gladier.base import GladierBaseTool
 from gladier.client import GladierBaseClient
 from gladier.provenance_client import ProvenanceBaseClient
 from gladier.exc import FlowGenException
-from gladier.utils.flow_generation import generate_tool_flow, combine_tool_flows, post_process_provenance_flow
+from gladier.utils.flow_generation import generate_tool_flow, combine_tool_flows
 
 
 def generate_flow_definition(_cls=None, *, modifiers=None):
@@ -45,10 +45,6 @@ def generate_flow_definition(_cls=None, *, modifiers=None):
             elif issubclass(cls, GladierBaseTool):
                 c = cls(*args, **kwargs)
                 c.flow_definition = generate_tool_flow(c, modifiers)
-                return c
-            elif issubclass(cls, ProvenanceBaseClient):  # Before GladierBaseClient as it is a subclass
-                c = cls(*args, **kwargs)
-                c.flow_definition = post_process_provenance_flow(c, modifiers)
                 return c
             elif issubclass(cls, GladierBaseClient):
                 c = cls(*args, **kwargs)
