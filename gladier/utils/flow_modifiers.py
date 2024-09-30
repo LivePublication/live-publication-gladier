@@ -2,7 +2,6 @@ import logging
 
 from gladier.exc import FlowModifierException
 from gladier.utils.name_generation import get_compute_flow_state_name
-import json
 
 log = logging.getLogger(__name__)
 compute_modifiers = {"endpoint", "payload", "tasks"}
@@ -23,18 +22,11 @@ state_modifiers = {
     "End",
 }
 
-provenance_modifiers = {
-    "Provenance",
-    "OrchestrationServer_UUID",
-    "ProvenanceDirectory"
-}
-
 
 class FlowModifiers:
-    supported_modifiers = state_modifiers.union(compute_modifiers, provenance_modifiers)
+    supported_modifiers = state_modifiers.union(compute_modifiers)
     compute_modifiers = compute_modifiers
     state_modifiers = state_modifiers
-    provenance_modifiers = provenance_modifiers
 
     def __init__(self, tools, modifiers, cls=None):
         self.cls = cls
@@ -79,13 +71,11 @@ class FlowModifiers:
                     "\thttps://gladier.readthedocs.io/en/latest/migration.html\n"
                 )
 
-            if not self.get_function(name) and name not in provenance_modifiers:
-                print(self.cls.__class__.__name__)
+            if not self.get_function(name):
                 raise FlowModifierException(
                     f"Class {self.cls} included modifier which does not "
                     f"exist: {name}. Allowed modifiers include "
-                    f'{", ".join(self.function_names)} and'
-                    f" {", ".join(provenance_modifiers)}"
+                    f'{", ".join(self.function_names)}'
                 )
 
             for mod_name, mod_value in mods.items():
@@ -98,53 +88,29 @@ class FlowModifiers:
 
     def apply_modifiers(self, flow):
         for name, mods in self.modifiers.items():
-            if name in provenance_modifiers:
-                flow_states = list(flow["States"].items())
-                for index, (state_name, state) in enumerate(flow_states):
-                    if ("provenance" in state_name
-                            and state.get("ActionUrl") == "https://actions.automate.globus.org/transfer/transfer"):
-                        log.debug(f"Configuring provenance transfer {state_name}" +
-                                  f"for provenance compute step {flow_states[index - 1][0]}")
-                        flow["States"][state_name] = self.apply_modifier(
-                            flow["States"][state_name], mods, flow_states[index - 1]
-                        )
-            else:
-                state_name = self.get_flow_state_name(name)
-                flow["States"][state_name] = self.apply_modifier(
-                    flow["States"][state_name], mods
-                )
-
+            state_name = self.get_flow_state_name(name)
+            flow["States"][state_name] = self.apply_modifier(
+                flow["States"][state_name], mods
+            )
         return flow
 
-    def apply_modifier(self, flow_state, state_modifiers, prev_flow_state=None):
-        if prev_flow_state:
-            # only included if provenance modifiers are present
-            try:
-                # TODO: Currently doesnt do anything.
-                OS_UUID = state_modifiers["OrchestrationServer_UUID"]
-                Prov_DIR = state_modifiers["ProvenanceDirectory"]
-                prev_state_name, prev_state = prev_flow_state
-
-                return flow_state
-            except KeyError as e:
-                print("Failed to resolve OS_UUID or Prov_DIR:", str(e))
-        else:
-            for modifier_name, value in state_modifiers.items():
-                log.debug(f'Applying modifier "{modifier_name}", value "{value}"')
-                # If this is for a compute task
-                if modifier_name in self.compute_modifiers:
-                    if modifier_name == "tasks":
-                        flow_state["Parameters"] = self.generic_set_modifier(
-                            flow_state["Parameters"], "tasks", value
-                        )
-                    else:
-                        flow_state["Parameters"]["tasks"] = [
-                            self.generic_set_modifier(fx_task, modifier_name, value)
-                            for fx_task in flow_state["Parameters"]["tasks"]
-                        ]
-                elif modifier_name in self.state_modifiers:
-                    self.generic_set_modifier(flow_state, modifier_name, value)
-            return flow_state
+    def apply_modifier(self, flow_state, state_modifiers):
+        for modifier_name, value in state_modifiers.items():
+            log.debug(f'Applying modifier "{modifier_name}", value "{value}"')
+            # If this is for a compute task
+            if modifier_name in self.compute_modifiers:
+                if modifier_name == "tasks":
+                    flow_state["Parameters"] = self.generic_set_modifier(
+                        flow_state["Parameters"], "tasks", value
+                    )
+                else:
+                    flow_state["Parameters"]["tasks"] = [
+                        self.generic_set_modifier(fx_task, modifier_name, value)
+                        for fx_task in flow_state["Parameters"]["tasks"]
+                    ]
+            elif modifier_name in self.state_modifiers:
+                self.generic_set_modifier(flow_state, modifier_name, value)
+        return flow_state
 
     def generic_set_modifier(self, item, mod_name, mod_value):
         if not isinstance(mod_value, str):
