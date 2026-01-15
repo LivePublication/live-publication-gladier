@@ -47,6 +47,7 @@ def main() -> None:
         properties={"name": "Augustus Ellerm"},
     )
     crate.add(author)
+    crate.root_dataset["creator"] = author
 
     software = ContextEntity(
         crate,
@@ -89,9 +90,12 @@ def main() -> None:
         "tests/Provenance_ROCrate_Example/input.json",
         "tests/Provenance_ROCrate_Example/WEP.json",
         "scripts/generate_rocrate.py",
-        "scripts/validate_metadata.py",
     ]:
         add_file(crate, repo_root, rel_path, added_paths)
+
+    has_part = crate.root_dataset.setdefault("hasPart", [])
+    if {"@id": "ro-crate-metadata.json"} not in has_part:
+        has_part.append({"@id": "ro-crate-metadata.json"})
 
     with tempfile.TemporaryDirectory() as tmp_dir:
         tmp_path = Path(tmp_dir)

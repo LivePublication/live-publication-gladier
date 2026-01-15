@@ -4,6 +4,9 @@
         {
             "@id": "./",
             "@type": "Dataset",
+            "creator": {
+                "@id": "https://orcid.org/0000-0001-8260-231X"
+            },
             "datePublished": "2026-01-16",
             "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
             "hasPart": [
@@ -72,9 +75,6 @@
                 },
                 {
                     "@id": "scripts/generate_rocrate.py"
-                },
-                {
-                    "@id": "scripts/validate_metadata.py"
                 }
             ],
             "license": "https://spdx.org/licenses/Apache-2.0",
@@ -198,10 +198,6 @@
         },
         {
             "@id": "scripts/generate_rocrate.py",
-            "@type": "File"
-        },
-        {
-            "@id": "scripts/validate_metadata.py",
             "@type": "File"
         }
     ]
