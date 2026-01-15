@@ -9,6 +9,7 @@ from rocrate.model import ContextEntity, Person
 from rocrate.rocrate import ROCrate
 
 REPO_URL = "https://github.com/LivePublication/live-publication-gladier"
+DOI = "https://doi.org/10.5281/zenodo.18255883"
 TITLE = "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication"
 DESCRIPTION = (
     "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used "
@@ -16,7 +17,7 @@ DESCRIPTION = (
     "provenance model and RO-Crate packaging patterns."
 )
 LICENSE_URL = "https://spdx.org/licenses/Apache-2.0"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 
 def add_file(crate: ROCrate, repo_root: Path, rel_path: str, added_paths: set[str]) -> None:
@@ -40,6 +41,7 @@ def main() -> None:
     crate.root_dataset["datePublished"] = date.today().isoformat()
     crate.root_dataset["license"] = LICENSE_URL
     crate.root_dataset["version"] = VERSION
+    crate.root_dataset["identifier"] = DOI
 
     author = Person(
         crate,
@@ -59,6 +61,7 @@ def main() -> None:
             "version": VERSION,
             "license": LICENSE_URL,
             "codeRepository": REPO_URL,
+            "identifier": DOI,
             "author": author,
             "programmingLanguage": "Python",
         },

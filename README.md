@@ -1,4 +1,5 @@
-# live-publication-gladier 
+# live-publication-gladier [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18255884.svg)](https://doi.org/10.5281/zenodo.18255884)
+
 
 This repository contains a LivePublication extension built around Gladier to define and run Globus Flows workflows with explicit, provenance-aware structure. It provides workflow/flow definitions and supporting utilities that enable generation and export of step-level execution provenance. The codebase extends Gladier with provenance-focused clients/tools and workflow definitions. It includes provenance-aware flow composition, transfer steps to emit distributed crates, and example/test flows that generate flow definitions and inputs aligned to RO-Crate packaging patterns.
 
@@ -40,7 +41,7 @@ Globus/Gladier credentials are managed via Gladier’s login manager and stored 
 
 ## How to cite
 - GitHub: https://github.com/LivePublication/live-publication-gladier
-- Zenodo DOI: (minted after release)
+- Zenodo DOI: https://doi.org/10.5281/zenodo.18255883
 
 ## License
 Apache-2.0. See `LICENSE`.

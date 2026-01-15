@@ -2,7 +2,7 @@
   "title": "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication",
   "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
   "upload_type": "software",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "creators": [
     {
       "name": "Ellerm, Augustus",
@@ -24,6 +24,11 @@
     "DSC"
   ],
   "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.18255883",
+      "relation": "isIdenticalTo",
+      "scheme": "doi"
+    },
     {
       "identifier": "https://github.com/LivePublication/live-publication-gladier",
       "relation": "isSupplementTo",

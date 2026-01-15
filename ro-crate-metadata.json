@@ -77,12 +77,13 @@
                     "@id": "scripts/generate_rocrate.py"
                 }
             ],
+            "identifier": "https://doi.org/10.5281/zenodo.18255883",
             "license": "https://spdx.org/licenses/Apache-2.0",
             "mainEntity": {
                 "@id": "software"
             },
             "name": "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication",
-            "version": "1.0.0"
+            "version": "1.0.1"
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -107,10 +108,11 @@
             },
             "codeRepository": "https://github.com/LivePublication/live-publication-gladier",
             "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
+            "identifier": "https://doi.org/10.5281/zenodo.18255883",
             "license": "https://spdx.org/licenses/Apache-2.0",
             "name": "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication",
             "programmingLanguage": "Python",
-            "version": "1.0.0"
+            "version": "1.0.1"
         },
         {
             "@id": "README.md",

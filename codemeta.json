@@ -5,7 +5,12 @@
   "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
   "codeRepository": "https://github.com/LivePublication/live-publication-gladier",
   "license": "https://spdx.org/licenses/Apache-2.0",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "10.5281/zenodo.18255883"
+  },
   "author": [
     {
       "@type": "Person",
