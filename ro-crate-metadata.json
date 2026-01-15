@@ -1,0 +1,208 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "datePublished": "2026-01-16",
+            "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
+            "hasPart": [
+                {
+                    "@id": "README.md"
+                },
+                {
+                    "@id": "README.rst"
+                },
+                {
+                    "@id": "LICENSE"
+                },
+                {
+                    "@id": ".zenodo.json"
+                },
+                {
+                    "@id": "codemeta.json"
+                },
+                {
+                    "@id": "CITATION.cff"
+                },
+                {
+                    "@id": "requirements.txt"
+                },
+                {
+                    "@id": "setup.py"
+                },
+                {
+                    "@id": "setup.cfg"
+                },
+                {
+                    "@id": "gladier/provenance_base.py"
+                },
+                {
+                    "@id": "gladier/provenance_client.py"
+                },
+                {
+                    "@id": "gladier/provenance_transfers.py"
+                },
+                {
+                    "@id": "gladier/utils/flow_generation.py"
+                },
+                {
+                    "@id": "gladier/utils/flow_modifiers.py"
+                },
+                {
+                    "@id": "gladier/utils/flow_traversal.py"
+                },
+                {
+                    "@id": "gladier/utils/tool_chain.py"
+                },
+                {
+                    "@id": "gladier/utils/tool_alias.py"
+                },
+                {
+                    "@id": "gladier/utils/name_generation.py"
+                },
+                {
+                    "@id": "tests/provenance_test.py"
+                },
+                {
+                    "@id": "tests/Provenance_ROCrate_Example/input.json"
+                },
+                {
+                    "@id": "tests/Provenance_ROCrate_Example/WEP.json"
+                },
+                {
+                    "@id": "scripts/generate_rocrate.py"
+                },
+                {
+                    "@id": "scripts/validate_metadata.py"
+                }
+            ],
+            "license": "https://spdx.org/licenses/Apache-2.0",
+            "mainEntity": {
+                "@id": "software"
+            },
+            "name": "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication",
+            "version": "1.0.0"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-8260-231X",
+            "@type": "Person",
+            "name": "Augustus Ellerm"
+        },
+        {
+            "@id": "software",
+            "@type": "SoftwareSourceCode",
+            "author": {
+                "@id": "https://orcid.org/0000-0001-8260-231X"
+            },
+            "codeRepository": "https://github.com/LivePublication/live-publication-gladier",
+            "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
+            "license": "https://spdx.org/licenses/Apache-2.0",
+            "name": "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication",
+            "programmingLanguage": "Python",
+            "version": "1.0.0"
+        },
+        {
+            "@id": "README.md",
+            "@type": "File"
+        },
+        {
+            "@id": "README.rst",
+            "@type": "File"
+        },
+        {
+            "@id": "LICENSE",
+            "@type": "File"
+        },
+        {
+            "@id": ".zenodo.json",
+            "@type": "File"
+        },
+        {
+            "@id": "codemeta.json",
+            "@type": "File"
+        },
+        {
+            "@id": "CITATION.cff",
+            "@type": "File"
+        },
+        {
+            "@id": "requirements.txt",
+            "@type": "File"
+        },
+        {
+            "@id": "setup.py",
+            "@type": "File"
+        },
+        {
+            "@id": "setup.cfg",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/provenance_base.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/provenance_client.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/provenance_transfers.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/utils/flow_generation.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/utils/flow_modifiers.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/utils/flow_traversal.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/utils/tool_chain.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/utils/tool_alias.py",
+            "@type": "File"
+        },
+        {
+            "@id": "gladier/utils/name_generation.py",
+            "@type": "File"
+        },
+        {
+            "@id": "tests/provenance_test.py",
+            "@type": "File"
+        },
+        {
+            "@id": "tests/Provenance_ROCrate_Example/input.json",
+            "@type": "File"
+        },
+        {
+            "@id": "tests/Provenance_ROCrate_Example/WEP.json",
+            "@type": "File"
+        },
+        {
+            "@id": "scripts/generate_rocrate.py",
+            "@type": "File"
+        },
+        {
+            "@id": "scripts/validate_metadata.py",
+            "@type": "File"
+        }
+    ]
+}

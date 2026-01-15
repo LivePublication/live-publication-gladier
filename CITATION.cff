@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: live-publication-gladier -- Provenance-aware Globus Flows workflows for LivePublication
+message: If you use this software, please cite it as below.
+type: software
+version: 1.0.0
+authors:
+  - family-names: Ellerm
+    given-names: Augustus
+    orcid: https://orcid.org/0000-0001-8260-231X
+abstract: Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.
+license: Apache-2.0
+repository-code: https://github.com/LivePublication/live-publication-gladier
+url: https://github.com/LivePublication/live-publication-gladier
+keywords:
+  - LivePublication
+  - provenance
+  - RO-Crate
+  - Globus
+  - Globus Flows
+  - Globus Automate
+  - Gladier
+  - workflow
+  - distributed
+  - DPC
+  - DSC
+

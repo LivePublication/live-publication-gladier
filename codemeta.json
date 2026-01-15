@@ -1,0 +1,37 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "live-publication-gladier: Provenance-aware Globus Flows workflows for LivePublication",
+  "description": "Provenance-aware Gladier/Globus Flows workflow definitions and utilities used to generate step-level execution provenance compatible with the LivePublication provenance model and RO-Crate packaging patterns.",
+  "codeRepository": "https://github.com/LivePublication/live-publication-gladier",
+  "license": "https://spdx.org/licenses/Apache-2.0",
+  "version": "1.0.0",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Augustus Ellerm",
+      "identifier": "https://orcid.org/0000-0001-8260-231X"
+    }
+  ],
+  "keywords": [
+    "LivePublication",
+    "provenance",
+    "RO-Crate",
+    "Globus",
+    "Globus Flows",
+    "Globus Automate",
+    "Gladier",
+    "workflow",
+    "distributed",
+    "DPC",
+    "DSC"
+  ],
+  "programmingLanguage": "Python",
+  "softwareRequirements": [
+    "globus-sdk",
+    "globus-compute-sdk",
+    "fair-research-login",
+    "pydantic"
+  ]
+}
+
